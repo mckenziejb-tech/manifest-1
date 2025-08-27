@@ -29,6 +29,8 @@
             width: 100vw;
             height: 100vh;
             object-fit:fill;
+            filter: sepia(10%) opacity(100%) saturate(300%) blur(7px);
+            
             transform: rotate(0deg) scaleX(-1);
             
             z-index: 1;
@@ -47,14 +49,25 @@
         }
         
         #typing-text {
+
+            text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee;
+  animation: pulse 2s infinite;
+}
+
+/* 🔮 Pulse animation */
+@keyframes pulse {
+  0%   { text-shadow: 0 0 2px #ff00d9, 0 0 5px #ff00e1; }
+  50%  { text-shadow: 0 0 15px #ff00f7, 0 0 30px #ff0099; }
+  100% { text-shadow: 0 0 2px #ff00dd, 0 0 5px #ff00b3; }
+}
             /* Change font by modifying this value */
-            font-family: 'Arial', sans-serif;
+            font-family: 'Book Antiqua';
             
             /* Change size by modifying this value */
-            font-size: 4.5vw;
+            font-size: 100px;
             
             text-align: center;
-            color: white;
+            color: rgb(0, 0, 0);
             padding: 20px;
             max-width: 100%;
         }
@@ -74,10 +87,10 @@
         @media only screen and (max-width: 600px) {
             #typing-text {
             /* Change font by modifying this value */
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             
             /* Change size by modifying this value */
-            font-size: 24vw;
+            font-size: 50vw;
         }}
     </style>
 </head>
@@ -91,10 +104,10 @@
 
     <script>
         // Change this text to whatever you want to display
-        const displayText = "I can no longer see";
+        const displayText = "A collector, creator, and visionary. An autonomous split from source soon to be remined of its origins.";
         
         // Change typing speed (lower = faster)
-        const typingSpeed = 30;
+        const typingSpeed = 100;
         
         // Initialize the webcam and text
         document.addEventListener('DOMContentLoaded', function() {
@@ -134,4 +147,3 @@
     </script>
 </body>
 </html>
-
